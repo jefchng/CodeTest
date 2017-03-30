@@ -3,6 +3,10 @@ package collection_questions;
 import java.util.*;
 
 public class CollectionsTest1 {
+	/*
+	 * Regular Lists were chosen for the Collections 1 and 2 to take advantage of shuffling
+	 * TreeSet was chosen for Collection 3 because sets do not allow for duplicates and TreeSets are ordered
+	 */
 	public static List<Integer> c1;
 	public static List<Integer> c2;
 	public static TreeSet<Integer> c3;
@@ -48,6 +52,7 @@ public class CollectionsTest1 {
 	}
 	
 	public static void print(Iterator<Integer> iter) {
+		if (!iter.hasNext()) return;
 		System.out.print("[");
 		System.out.print(iter.next()); 
 		while (iter.hasNext()) {
