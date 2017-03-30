@@ -22,33 +22,28 @@ public class CodeRewrite {
 	}
 
 	/*
-	 * This function only works for integers from 0-9 inclusive.
+	 * Rewritten Function with only 1 loop
 	 */
 	public static void newFunc(int n) {
-		if (n < 0 || n > 9) {
-			throw new IllegalArgumentException("Input must be between 0 and 9 inclusive");
-		}
-		int i = 1;
-		char[] s = new char[n];
-		Arrays.fill(s, '.');
-		
-		while (i <= n) {
-			Arrays.fill(s, n-i, n, (char) (i + '0'));
-			System.out.println(s);
-			i++;
+		String[] arr = new String[n]; 
+		Arrays.fill(arr, ".");
+		for (int i = 1; i <= n; i++) {
+			Arrays.fill(arr, n-i, n,  i+"");
+			System.out.println(Arrays.toString(arr).replaceAll(", |\\[|\\]", ""));
 		}
 	}
-
 	
+
 	public static void main(String[] args) {
 		System.out.println("Output of Original Function");
 		originalFunc();
 		
 		System.out.println();
 		
-		int x = 9;
+		int x = 6;
 		System.out.printf("Output of New Function with input = %d\n", x);
 		newFunc(x);
+
 
 	}
 
