@@ -25,6 +25,7 @@ public class CodeRewrite {
 	 * Rewritten Function with only 1 loop
 	 */
 	public static void newFunc(int n) {
+		if (n < 0) throw new IllegalArgumentException("Input must be nonnegative");
 		String[] arr = new String[n]; 
 		Arrays.fill(arr, ".");
 		for (int i = 1; i <= n; i++) {
@@ -33,7 +34,6 @@ public class CodeRewrite {
 		}
 	}
 	
-
 	public static void main(String[] args) {
 		System.out.println("Output of Original Function");
 		originalFunc();
